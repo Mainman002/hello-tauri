@@ -106,7 +106,7 @@ window.addEventListener('load', function(){
         init(){
             console.log("Game Started");
 
-            const gears_offset = {x:64, y:-70};
+            const gears_offset = {x:160, y:-32};
 
             // Add Gear 1
             this.instance(this.objects, Gear_01, {x:canvas.width*0.5+gears_offset.x, y:canvas.height*0.5+64+gears_offset.y}, 0.4);
@@ -117,11 +117,11 @@ window.addEventListener('load', function(){
             // Add Gear 3
             this.instance(this.objects, Gear_03, {x:canvas.width*0.5-35+gears_offset.x, y:canvas.height*0.5+240+gears_offset.y}, 0.4);
         
-            const _start_pos = {x:128, y:400};
-            const _offset_pos = {x:128*1.15, y:128*1.15};
+            const _start_pos = {x:80, y:340};
+            const _offset_pos = {x:128+24, y:128+24};
             for ( let id_x=0;id_x < 2;id_x++ ) {
                 for ( let id_y=0;id_y < 3;id_y++ ) {
-                this.instance(this.objects, Gear_03, {x:_start_pos.x*0.5-35+gears_offset.x+_offset_pos.x*id_x, y:_start_pos.y*0.5+240+gears_offset.y+_offset_pos.y*id_y}, 0.4);
+                this.instance(this.objects, Gear_03, {x:_start_pos.x+_offset_pos.x*id_x, y:_start_pos.y+_offset_pos.y*id_y }, 0.4);
                 }
             };
         }

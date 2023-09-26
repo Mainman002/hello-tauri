@@ -43,7 +43,11 @@ update(deltaTime){
 
         // Show Mouse Interact Bounds
         if (this.interact){
-            Graphics.Bevel_Outline( this.overlayCtx, {x:this.pos.x-this.size.w*0.5, y:this.pos.y-this.size.h*0.5}, {w:this.size.w, h:this.size.h}, 'Red', 3, 1 );
+            if (this.game.mouse.click) {
+                Graphics.Bevel_Outline( this.overlayCtx, {x:this.pos.x-this.size.w*0.5, y:this.pos.y-this.size.h*0.5}, {w:this.size.w, h:this.size.h}, 'Orange', 5, 1 );
+            } else {
+                Graphics.Bevel_Outline( this.overlayCtx, {x:this.pos.x-this.size.w*0.5, y:this.pos.y-this.size.h*0.5}, {w:this.size.w, h:this.size.h}, 'Teal', 5, 1 );
+            }
         } 
     }
 }
